@@ -48,30 +48,16 @@
         <th>Fine</th>
       </thead>
       <tbody>
+        {% for i, j in zip(rs, range(1, len(rs))) %}
           <tr>
-              <td>1</td>
-              <td>Lorem, ipsum dolor.</td>
-              <td>Lorem, ipsum.</td>
-              <td>28/10/21</td>
-              <td>28/11/21</td>
-              <td>1000</td>
+              <td>{{ j }}</td>
+              <td>rs.book_name</td>
+              <td>rs.author_name</td>
+              <td>rs.issue_date</td>
+              <td>rs.due_date</td>
+              <td>{{ info[3] }}</td>
           </tr>
-          <tr>
-            <td>1</td>
-            <td>Lorem, ipsum dolor.</td>
-            <td>Lorem, ipsum.</td>
-            <td>28/10/21</td>
-            <td>28/11/21</td>
-            <td>500</td>              
-          </tr>
-        <tr>
-            <td>1</td>
-            <td>Lorem, ipsum dolor.</td>
-            <td>Lorem, ipsum.</td>
-            <td>28/10/21</td>
-            <td>28/11/21</td>
-            <td>500</td>
-        </tr>
+        {endfor}
       </tbody>
   </table>
 </div>

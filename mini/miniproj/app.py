@@ -6,6 +6,7 @@ from random import *
 from flask_mail import *
 import re
 import sqlalchemy as dbsql
+from datetime import datetime, date
  
 app = Flask(__name__)
 app.secret_key = 'xyz'
@@ -20,6 +21,7 @@ connection = engine.connect()
 metadata = dbsql.MetaData()
 subjects = dbsql.Table('subjects', metadata, autoload=True, autoload_with=engine)
 books = dbsql.Table('books', metadata, autoload=True, autoload_with=engine)
+profile = dbsql.Table('profile', metadata, autoload=True, autoload_with=engine)
 
 
 mail = Mail(app)
@@ -148,7 +150,10 @@ def profile():
     mail = current_user.email
     username = current_user.username
     rollno = mail[:12]
-    return render_template("profile.html", info=[mail, username, rollno])
+    rs = get_profile(rollno)
+    dd = date.today()
+    fine = days_between(rs.due_date, dd)
+    return render_template("profile.html", info=[mail, username, rollno, fine], rs=rs)
 
 
 @app.route('/misc')
@@ -178,6 +183,13 @@ def get_subjects(number):
     ResultSet = ResultProxy.fetchall()
     return ResultSet
 
+def get_profile(rollno):
+    query = dbsql.select([profile.columns.book_name, profile.columns.book_author, profile.columns.issue_date, profile.columns.due_date])
+    query = query.where(profile.columns.rollno == rollno)
+    ResultProxy = connection.execute(query)
+    ResultSet = ResultProxy.fetchall()
+    return ResultSet 
+
 def get_books(sub):
     query = dbsql.select([books.columns.book_name, books.columns.book_author, books.columns.stock])
     if type(sub) == str:
@@ -201,3 +213,8 @@ def get_searches(query, number):
         if match:
             search_results.append(i)
     return search_results
+
+def days_between(d1, d2):
+    d1 = datetime.strptime(d1, "%Y-%m-%d")
+    d2 = datetime.strptime(d2, "%Y-%m-%d")
+    return abs((d2 - d1).days)
