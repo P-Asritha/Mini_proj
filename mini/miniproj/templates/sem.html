@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="../static/sem{{ sem }}.css">
+{% endblock %}
+
+{% block body %}
+<section class="bar">
+    <div>
+        <ul>
+            <li>
+              <a href="/profile">My Profile</a>
+            </li><hr>
+            <li>
+              <a href="/sem1">Semesters</a>
+            </li><hr>
+            <li>
+              <a href="/logout">Logout</a>
+            </li><hr>
+        </ul>
+    </div>
+</section>
+<div class="cont">
+    <h2 style="color: azure;"><b>SEMESTER {{ sem }}</b></h2><br><br>
+    <!-- <div class="srch"> -->
+  <!-- <form>
+    <input class="me-2" type="search" width="700px" placeholder="Search by book title, author name" >
+    <button class="butn" type="submit">Search</button>
+    </form> -->
+    <form action="/sem{{sem}}/search" method="post" class="d-flex" style="color: cadetblue;">
+      <input class="form-control me-2" name="q" type="search" placeholder="Search by book name,author name" aria-label="Search">
+      <button class="btn b1 btn-outline-success" type="submit" style="color: azure; border: 2px solid black;">Search</button>
+    </form>
+</div><br>
+<div class="subj">
+    <!-- <div class="row"> -->
+  {% for i in rs %}
+  <form action="/sem{{ sem }}" method="post">
+    <button type="submit" class="col-3 wow slideInLeft" name="{{ i[0] }}" value="{{ i[0] }}" style="border: 5px  solid black;margin:20px;height: 70px;border-radius:10px;">
+      <b>{{ i[1] }}</b>
+  </button><br>
+  </form>
+      
+  {% endfor %}
+<!-- </div> -->
+</div>
+{% if rs1 %}
+  <div id="tab" >
+      <table id="info">
+          <thead>
+            <th class="ff">Book Name</th>
+            <th class="ff">Author Name</th>
+            <th>Available</th>
+          </thead>
+          <tbody>
+            {% for i in rs1 %}
+              <tr>
+                  <td>{{ i[0] }}</td>
+                  <td>{{ i[1] }}</td>
+                  <td>{{ i[2].upper() }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+  {% endif %}
+</div>
+{% endblock %}

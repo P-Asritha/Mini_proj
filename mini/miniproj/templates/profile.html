@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="../static/profile.css" class="css">
+{% endblock %}
+{% block body %}
+  <section class="bar disableScroll">
+      <div>
+          <ul>
+              <li>
+                <a href="/sem1">Semesters</a>
+              </li><hr>
+              <li>
+                <a href="/logout">Logout</a>
+              </li><hr>
+          </ul>
+      </div>
+  </section>
+  <div class="sign">
+    <img src="../static/images/sign2.png" height="100px" width="100px"><br>
+    <table class="info">
+      <tbody>
+      <tr>
+        <td class="hd"><b>Username:</b></td>
+        <td>{{ info[1] }}</td>
+      </tr><br>
+      <tr>
+        <td class="hd"><b>Roll No:</b></td>
+        <td>{{ info[2] }}</td>
+      </tr><br>
+      <tr>
+        <td class="hd"><b>Email-ID:</b></td>
+        <td>{{ info[0] }}</td>
+      </tr>
+      </tbody>
+    </table>
+</div>
+<div class="list">
+<h4>List of Issued Books</h4><br>
+<div id="tab" >
+  <table id="info" style="border: 3px solid black;">
+      <thead>
+        <th>S.no</th>
+        <th class="ff">Book Name</th>
+        <th class="ff">Author Name</th>
+        <th>Issue Date</th>
+        <th>Due Date</th>
+        <th>Fine</th>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td>Lorem, ipsum dolor.</td>
+              <td>Lorem, ipsum.</td>
+              <td>28/10/21</td>
+              <td>28/11/21</td>
+              <td>1000</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Lorem, ipsum dolor.</td>
+            <td>Lorem, ipsum.</td>
+            <td>28/10/21</td>
+            <td>28/11/21</td>
+            <td>500</td>              
+          </tr>
+        <tr>
+            <td>1</td>
+            <td>Lorem, ipsum dolor.</td>
+            <td>Lorem, ipsum.</td>
+            <td>28/10/21</td>
+            <td>28/11/21</td>
+            <td>500</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}

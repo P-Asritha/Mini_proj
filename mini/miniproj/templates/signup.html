@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/signup.css" class="css">
+        <title>CSE_RESOURCES</title>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <img src="../static/images/nlogo1.jpeg" height="65px" width="145px">
+                <!-- <p>CSE RESOURCES</p> -->
+                <a href="/">Home</a>
+            </div> 
+        </header>
+        <section class="part">
+            <div class="img">
+                <img src="../static/images/logbg22c.jpg" height="100%" width="100%">
+            </div>
+            <div class="sign">
+                <p>SIGN UP</p>
+                <p class="cont">Please enter your details below to register</p><br>
+                <form method="post" action="/signup">
+                    <input type="text" autocomplete="off" id="name" name="sname" placeholder="Enter your name"><br><br>
+                    <input type="email" autocomplete="off" id="name1" name="semail" placeholder="Enter your College Email-ID"><br><br>
+                    <input type="password" id="name2" name="spwd" placeholder="Enter Password"><br><br>
+                    <input type="password" id="name3" name="cspwd" placeholder="Re-enter Password"><br><br><br>
+                    <!-- <input class="btn" type="submit" name="ssbt"><br><br> -->
+                    <input class="btn" type="submit" name="ssbt">
+                </form>
+                <!-- <p class="reg" style="font-size: 16px; margin-left :6px; color:rgb(141, 141, 141);">Don't have an account? <a href="/signup" style="text-decoration: none; color: azure;">SIGN UP</a> </p> -->
+            </div>
+        </section>
+    </body>
+    </html>

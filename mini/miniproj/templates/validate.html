@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/signup.css" class="css">
+        <title>CSE_RESOURCES</title>
+    </head>
+    <body>
+        <!-- <header>
+            <div class="navbar">
+                <img src="../static/images/logo.jpg" height="85px" width="145px">
+                <p>CSE RESOURCES</p>
+                <a href="/">Home</a>
+            </div> 
+        </header> -->
+        <header>
+            <div class="navbar">
+                <img src="../static/images/nlogo1.jpeg" height="65px" width="145px">
+                <!-- <p>CSE RESOURCES</p> -->
+                <a href="/">Home</a>
+            </div> 
+        </header>
+        <section class="part">
+            <div class="img">
+                <img src="../static/images/logbg22c.jpg" height="100%" width="100%">
+            </div>
+            <div class="validate" style="padding-top: 150px; margin-left: 150px;">
+                <form method="post" action="/validate">
+                    <input type="hidden" name="username" value="{{ cred[0] }}">
+                    <input type="hidden" name="email" value="{{ cred[1] }}">
+                    <input type="hidden" name="password" value="{{ cred[2] }}">
+                    <label style="color:rgb(141, 141, 141); font-size: 22px;" for="name4">OTP:</label>
+                    <input type="number" id="name4" name="otp" placeholder="Enter OTP"><br><br>
+                    <input class="btn" type="submit" name="ssbt" style="margin-left: 80px; font-size: 16px;">
+                </form>
+            </div>
+        </section>
+    </body>
+    </html>

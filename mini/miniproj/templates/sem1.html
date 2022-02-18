@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/5/superhero/bootstrap.min.css"> 
+  <link rel="stylesheet" href="../static/sem1.css" class="css">
+{% endblock %}
+
+{% block body %}
+  <section class="bar">
+      <div>
+          <ul>
+              <li>
+                <a href="/profile">My Profile</a>
+              </li><hr>
+              <li>
+                <a href="/logout">Logout</a>
+              </li><hr>
+          </ul>
+      </div>
+  </section>
+  <div class="cont">
+  <div class="row">
+  <div class="col quote">
+    <h1 class="jj animated fadeInDown delay-5s"><b>Choose Your Semester.</b></h1>
+    <h2 class="jj animated fadeInDown delay-5s"  ><b></b></h2>
+  </div>
+  </div><br><br><br>
+  <div class="sems">
+  <div class="row">
+    <a href="/sem3"><button type="button" class="col-3 wow slideInLeft "  style="border: 5px  solid black;margin:5px;height: 20vh;border-radius:10px;">
+        <b>SEM 3</b>
+    </button></a>
+    <a href="/sem4"><button class="col-3 wow slideInLeft " href="#" style="border: 5px  solid black;margin:5px;height: 20vh;border-radius:10px;">
+        <b>SEM 4</b>
+    </button></a>
+    <a href="/sem5"><button class="col-3 wow slideInLeft " href="#" style="border: 5px  solid black;margin:5px;height: 20vh;border-radius:10px;">
+        <b>SEM 5</b>
+    </button></a>
+    </div>
+    <div class="row">
+        <a href="/sem6"><button class="col-3 wow slideInLeft " href="#" style="border: 5px  solid black;margin:5px;height: 20vh;border-radius:10px;">
+            <b>SEM 6</b>
+        </button></a>
+        <a href="/sem7"><button class="col-3 wow slideInLeft " href="#" style="border: 5px  solid black;margin:5px;height: 20vh;border-radius:10px;">
+            <b>SEM 7</b>
+        </button></a>
+        <a href="/sem8"><button class="col-3 wow slideInLeft " href="#" style="border: 5px  solid black;margin:5px;height: 20vh;border-radius:10px;">
+            <b>SEM 8</b>
+        </button></a>
+        </div>
+        <div class="row">
+            <a href="/misc"><button class="col-3 wow slideInLeft " href="#" style="border: 5px  solid black;margin:5px;height: 20vh;border-radius:10px;">
+                <b>MISC</b>
+            </button></a>
+            </div>
+  </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>var wow = new WOW(
+        {
+          boxClass:     'wow',      // animated element css class (default is wow)
+          animateClass: 'animated', // animation css class (default is animated)
+          offset:       0,          // distance to the element when triggering the animation (default is 0)
+          mobile:       true,       // trigger animations on mobile devices (default is true)
+          live:         true,       // act on asynchronously loaded content (default is true)
+          callback:     function(box) {
+            // the callback is fired every time an animation is started
+            // the argument that is passed in is the DOM node being animated
+          },
+          scrollContainer: null,    // optional scroll container selector, otherwise use window,
+          resetAnimation: true,     // reset animation on end (default is true)
+        }
+      );
+      wow.init();
+      </script>
+  {% endblock %}

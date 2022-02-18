@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="../static/misc.css" class="css">
+  <script src="../static/misc.js"></script>
+{% endblock %}
+{% block body %}
+<section class="bar disableScroll">
+    <div>
+        <ul>
+            <li>
+              <a href="/profile">My Profile</a>
+            </li><hr>
+            <li>
+              <a href="/sem1">Semesters</a>
+            </li><hr>
+            <li>
+              <a href="/logout">Logout</a>
+            </li><hr>
+        </ul>
+    </div>
+</section>
+<div class="cont">
+    <h2><b>MISC</b></h2><br><br>
+    <!-- <div class="srch"> -->
+  <!-- <form>
+    <input class="me-2" type="search" width="700px" placeholder="Search by book title, author name" >
+    <button class="butn" type="submit">Search</button>
+    </form> -->
+    <form class="d-flex" style="color: cadetblue;">
+      <input class="form-control me-2" type="search" placeholder="Search by book name,author name" aria-label="Search">
+      <button class="btn b1 btn-outline-success" type="submit" style="border: 2px solid black; color:azure">Search</button>
+    </form>
+</div><br>
+<div class="subj">
+    <!-- <div class="row"> -->
+  <button  class="col-3 wow slideInLeft first "  onclick="pps()" style="border: 5px  solid black;margin:20px;height: 70px;border-radius:10px;">
+      <b>Programming for Problem Solving</b>
+  </button><br>
+<!-- </div> -->
+</div>
+<div id="tab" >
+    <table id="info">
+        <thead>
+          <th class="ff">Book Name</th>
+          <th class="ff">Author Name</th>
+          <th>Available</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lorem, ipsum dolor.</td>
+                <td>Lorem, ipsum.</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Lorem, ipsum dolor.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Yes</td>
+          </tr>
+          <tr>
+              <td>Lorem, ipsum dolor.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Yes</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

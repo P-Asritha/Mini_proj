@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image:url(../static/images/newsembg3.jpg) ,repeating-linear-gradient(to right,rgba(0,0,0,0.1),rgba(0,0,0,0.1));
+    /* background-color: rgba(217, 228, 233, 0.815); */
+    background-color: rgba(199, 199, 199, 0.815);
+}
+nav.navbar div.container-fluid form.d-flex button.btn{
+    color: cadetblue;
+}
+nav.navbar div.container-fluid form.d-flex button.btn:hover{
+    background-color: cadetblue;
+    color: black;
+}
+nav.navbar div.container-fluid a span{
+    color: azure;
+    font-family: Playfair Display;
+    /* margin-top: 30px; */
+    /* padding-top: 50px; */
+    margin-left: 10px;
+    font-size: 24px;
+
+}
+nav.navbar{
+    padding: 0;
+}
+section.bar{
+    width:240px;
+    height:850px;
+    background-color: black;
+
+}
+section.bar div ul{
+    list-style: none;
+    line-height: 45px;
+    padding-left: 0px;
+
+}
+section.bar div ul li a{
+    text-decoration: none;
+    /* color: cyan; */
+    color:rgb(226, 219, 219) ;
+    font-size: 20px;
+    padding-left: 10px;
+
+}
+section.bar div ul li a:hover{
+    color: cadetblue;
+}
+section.bar div ul li{
+    padding-top:16px;
+}
+section.bar{
+    float: left;
+}
+div.cont{
+float: left;
+margin-left: 25px;
+margin-top: 10px;
+}
+div.cont div.row div.quote{
+    /* color: black; */
+    color: azure;
+    font-size: 80px;
+    font-family: Playfair Display;
+    padding-top: 50px;
+    margin-left: 30px;
+}
+div.cont section.bar::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+div.sems div.row a{
+    width:400px;
+    /* background-color: rgba(199, 199, 199, 0.815); */
+    margin-right: 15px;
+}
+
+div.sems div.row a button.wow{
+    width:400px;
+    /* background-color: rgba(199, 199, 199, 0.815); */
+    background-color: rgb(163, 157, 157);
+}
+div.sems div.row a button.wow {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    color:rgb(16, 50, 73) ;
+    /* margin-top: 45px; */
+    padding:auto;
+    padding-top: 5px;
+    font-size: 25px;
+    /* background-color: rgba(199, 199, 199, 0.815); */
+}
+/* div.sems div.row button.wow{
+    width:400px;
+    background-color: rgba(199, 199, 199, 0.815);
+} */
+
+/* div.sems div.row button.wow {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    color:rgb(16, 50, 73) ;
+    padding:auto;
+    padding-top: 5px;
+    font-size: 25px; */
+    /* background-color: rgba(199, 199, 199, 0.815); */
+/* } */
+/* div.sems div.row button.wow p:hover{
+    color: azure;
+} */
+/* div.sems div.row a:hover{
+    background-color: rgb(73, 115, 143);
+    color: azure;
+} */
+
+div.sems div.row button.wow:hover{
+    background-color: rgb(16, 50, 73);
+    color: azure;
+}
+div.sems{
+    margin-left:0px;
+    margin-top: 10px;
+}
+
+/*MEDIA QUERIES*/
+@media(max-width:700px)
+{
+    *{
+        margin: 0px;
+        padding: 0px;
+        border:0px;
+    }
+    body{
+        height: 100%;
+        width: 100%;
+    }
+    nav.navbar{
+        width:100%;
+
+    }
+    nav.navbar div.container-fluid a img{
+        width:52px;
+        /* display: none; */
+        
+    }
+    nav.navbar div.container-fluid a span{
+        color: azure;
+        font-family: Playfair Display;
+        /* margin-top: 30px; */
+        /* padding-top: 50px; */
+        margin-left: 0px;
+        font-size: 16px;
+    
+    }
+    nav.navbar div.container-fluid form.d-flex input.form-control{
+        padding: 0px;
+        width:120px;
+    }
+    nav.navbar div.container-fluid form.d-flex button.btn{
+        font-size: 10px;
+        /* width:25px; */
+    }
+    section.bar{
+        width:120px;
+    }
+    section.bar div ul li{
+        padding: 5px;
+    }
+    section.bar div ul li a{
+        font-size: 18px;
+        padding: 0px;
+    }
+    div.cont{
+        margin-left:0px;
+        width:60%;
+        /* height: 100vh; */
+    }
+    div.cont div.row{
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    /* div.cont div.row div.col img{
+        height: 300px;
+        width: 250px;
+        display: block;
+    } */
+    div.cont div.row div.quote{
+        padding: 0;
+        font-size: 18px;
+        padding-left:5px;
+        margin-left: 20px;
+        /* display: none; */
+    }
+    /* div.sems div.row button.wow{
+        height: 40px!important;
+        width:400px;
+        padding: 0px;
+        margin:0px;
+        background-color: rgba(199, 199, 199, 0.815);
+        font-size: 20px;
+    } */
+    div.sems div.row a{
+        height: 60px!important;
+        width:320px;
+        padding: 0px;
+        margin-left: 8px;
+        margin-top:10px;
+        /* background-color: rgba(199, 199, 199, 0.815); */
+        font-size: 20px;
+    }
+    div.sems div.row a button.wow{
+        height: 60px!important;
+        width:250px;
+        padding: 0px;
+        margin: 0px !important;
+        background-color: rgba(199, 199, 199, 0.815);
+        font-size: 20px;
+    }
+   
+}
