@@ -16,12 +16,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #import the db and change to your mysql username and password
 #mysql -u root -p <dbname> < <path> (import)
-engine = dbsql.create_engine("mysql+pymysql://root:password123@localhost/lib")
+engine = dbsql.create_engine("mysql+pymysql://root:password123@localhost/lib_final")
 connection = engine.connect()
 metadata = dbsql.MetaData()
 subjects = dbsql.Table('subjects', metadata, autoload=True, autoload_with=engine)
 books = dbsql.Table('books', metadata, autoload=True, autoload_with=engine)
-profile = dbsql.Table('profile', metadata, autoload=True, autoload_with=engine)
 
 
 mail = Mail(app)
@@ -147,13 +146,20 @@ def semesters(number):
 @app.route('/profile')
 @login_required
 def profile():
+    profile = dbsql.Table('profile', metadata, autoload=True, autoload_with=engine)
     mail = current_user.email
     username = current_user.username
     rollno = mail[:12]
-    rs = get_profile(rollno)
+    query = dbsql.select([profile.columns.book_name, profile.columns.book_author, profile.columns.issue_date, profile.columns.due_date])
+    query = query.where(profile.columns.rollno == rollno)
+    ResultProxy = connection.execute(query)
+    rs = ResultProxy.fetchall()
     dd = date.today()
-    fine = days_between(rs.due_date, dd)
-    return render_template("profile.html", info=[mail, username, rollno, fine], rs=rs)
+    fine = []
+    sno = list(range(1, len(rs)))
+    for i in rs:
+        fine.append(days_between(str(i.due_date), str(dd))/2)
+    return render_template("profile.html", info=[mail, username, rollno], rs=rs, fine=fine, sno=sno)
 
 
 @app.route('/misc')
@@ -182,13 +188,6 @@ def get_subjects(number):
     ResultProxy = connection.execute(query)
     ResultSet = ResultProxy.fetchall()
     return ResultSet
-
-def get_profile(rollno):
-    query = dbsql.select([profile.columns.book_name, profile.columns.book_author, profile.columns.issue_date, profile.columns.due_date])
-    query = query.where(profile.columns.rollno == rollno)
-    ResultProxy = connection.execute(query)
-    ResultSet = ResultProxy.fetchall()
-    return ResultSet 
 
 def get_books(sub):
     query = dbsql.select([books.columns.book_name, books.columns.book_author, books.columns.stock])

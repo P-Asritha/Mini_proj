@@ -48,16 +48,16 @@
         <th>Fine</th>
       </thead>
       <tbody>
-        {% for i, j in zip(rs, range(1, len(rs))) %}
+        {% for i in sno %}
           <tr>
-              <td>{{ j }}</td>
-              <td>rs.book_name</td>
-              <td>rs.author_name</td>
-              <td>rs.issue_date</td>
-              <td>rs.due_date</td>
-              <td>{{ info[3] }}</td>
+              <td>{{ i+1 }}</td>
+              <td>{{ rs[i].book_name}}</td>
+              <td>{{ rs[i].book_author }}</td>
+              <td>{{ rs[i].issue_date }}</td>
+              <td>{{ rs[i].due_date }}</td>
+              <td>{{ fine[i] }}</td>
           </tr>
-        {endfor}
+        {% endfor %}
       </tbody>
   </table>
 </div>
